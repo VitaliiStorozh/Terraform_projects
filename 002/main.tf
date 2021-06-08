@@ -1,37 +1,37 @@
 #---------------------------------------------------------
 # My terraform_remote_state
 #
-# Build WebServerduring bootstrap_action
+# Build WebServer during bootstrap_action
 #
 # Made by Vitalii_Storozh
+#---------------------------------------------------------
 
-provider "aws" {}
+provider "aws" {
+  region = "us-east-2"
+}
 
-
-
-resource "aws_instance" "my_webserver" {
-  ami                    = "ami-043097594a7df80ec"
+resource "aws_instance" "my-web-server" {
+  ami                    = "ami-077e31c4939f6a2f3"
   instance_type          = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.my_webserver.id]
-  user_data              = <<EOF
-#!/bin/bash
-yum -y update
-yum -y install httpd
-myip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
-echo "<h2>WebServer with IP: $myip</h2><br>Build by Terraform!"  >  /var/www/html/index.html
-sudo service httpd start
-chkconfig httpd on
-EOF
+  vpc_security_group_ids = [aws_security_group.my-web-server.id]
+  user_data              = <<-EOF
+  #!/bin/bash
+  yum -y update
+  yum -y install httpd
+  myip=`curl http://169.254.169.254/latest/meta-data/local-ipv4`
+  echo "<h2>WebServer with IP: $myip</h2><br>Build by Terraform!"  >  /var/www/html/index.html
+  sudo service httpd start
+  chkconfig httpd on
+  EOF
+
   tags = {
-    Name  = "Web Server build by Terraform"
-    Owner = "Vitalii Storozh  "
+    Name  = "WebServerBuildByTerraform"
+    Owner = "VitaliiStorozh"
   }
 }
 
-
-resource "aws_security_group" "my_webserver" {
-  name        = "WebServer Security Group"
-  description = "My First SecurityGroup"
+resource "aws_security_group" "my-web-server" {
+  name = "WebServerSecurityGroup"
 
   ingress {
     from_port   = 80
@@ -55,7 +55,7 @@ resource "aws_security_group" "my_webserver" {
   }
 
   tags = {
-    Name  = "Web Server SecurityGroup"
-    Owner = "Vitalii_Storozh"
+    Name  = "SecurityGroupBuildByTerraform"
+    Owner = "VitaliiStorozh"
   }
 }
