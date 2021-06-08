@@ -6,7 +6,9 @@
 # Made by Vitalii_Storozh
 #----------------------------------------------------------
 
-provider "aws" {}
+provider "aws" {
+  region = "us-east-2"
+}
 
 
 resource "aws_security_group" "my_webserver" {
