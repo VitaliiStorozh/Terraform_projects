@@ -39,7 +39,7 @@ variable "instance_type" {
 }
 
 variable "allow_ports" {
-  default     = ["80", "443", "22"]
+  default     = ["80", "443", "22", "8080"]
   type        = list(any)
   description = "Lists of port to servers"
 }

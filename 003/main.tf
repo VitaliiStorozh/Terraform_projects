@@ -4,6 +4,7 @@
 # Build WebServerduring bootstrap_action
 #
 # Made by Vitalii_Storozh
+#-----------------------------------------------------------
 
 provider "aws" {
   region = "us-east-2"
