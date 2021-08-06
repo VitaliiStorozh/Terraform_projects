@@ -1,9 +1,11 @@
-output "webserver_instance_id" {
-  value = aws_instance.my_webserver.id
+output "my_web_site_ip" {
+  description = "Elatic IP address assigned to our WebSite"
+  value       = aws_eip.my_static_ip.public_ip
 }
 
-output "webserver_public_ip" {
-  value = aws_eip.my_static_ip.public_ip
+output "my_instance_id" {
+  description = "InstanceID of our WebSite"
+  value       = aws_instance.my_webserver.id
 }
 
 output "my_instance_arn" {

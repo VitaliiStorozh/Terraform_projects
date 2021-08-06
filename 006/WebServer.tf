@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # My terraform_remote_state
 #
-# Build WebServerduring bootstrap_action
+# Work with lifecycles. Create E_IP
 #
 # Made by Vitalii_Storozh
 #----------------------------------------------------------

@@ -1,7 +1,7 @@
 #---------------------------------------------------------
 # My terraform_remote_state
 #
-# Build WebServerduring bootstrap_action
+# Build DynamicSecurityGroup
 #
 # Made by Vitalii_Storozh
 #----------------------------------------------------------

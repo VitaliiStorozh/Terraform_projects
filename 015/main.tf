@@ -1,3 +1,12 @@
+
+#----------------------------------------------------------
+# My Terraform
+#
+# Execute Local Commands on Computer with Terraform
+#
+# Made by Vitalii Storozh
+#----------------------------------------------------------
+
 provider "aws" {
   region = "us-east-2"
 }
