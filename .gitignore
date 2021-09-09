@@ -1,3 +1,9 @@
 .terraform*
 *.tfstate
 *.tfstate.backup
+.vagrant/
+PasswordForVault.txt
+.terraform/
+.terraform*
+terraform.tfstate*
+study_book
