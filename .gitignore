@@ -6,4 +6,4 @@ PasswordForVault.txt
 .terraform/
 .terraform*
 terraform.tfstate*
-study_book
+study_book/
